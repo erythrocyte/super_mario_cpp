@@ -30,9 +30,9 @@ install(TARGETS ${LIB_SM_TARGET}
     LIBRARY DESTINATION ${LIB_INSTALL_DIR}
 )
 
-find_package(SFML COMPONENTS window graphics system)
+find_package(SFML 2.5.1 COMPONENTS graphics window system audio REQUIRED)
 
 target_link_libraries(${LIB_SM_TARGET} ${Boost_LIBRARIES})
-target_link_libraries(${LIB_SM_TARGET} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+target_link_libraries(${LIB_SM_TARGET} sfml-system sfml-window sfml-graphics sfml-audio)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
