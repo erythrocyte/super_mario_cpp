@@ -50,6 +50,9 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "cstdarg": "cpp",
+        "iomanip": "cpp",
+        "numeric": "cpp"
     }
 }
