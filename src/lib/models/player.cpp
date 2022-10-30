@@ -62,7 +62,7 @@ void Player::collision(int num)
                 }
             }
 
-            if (m_map[i][j] == 'c') {
+            if (m_map[i][j] == TileMapObjectEnum::Coin) {
                 // TileMap[i][j]=' ';
             }
         }

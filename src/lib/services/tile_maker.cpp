@@ -25,7 +25,7 @@ std::vector<std::shared_ptr<slm::Tile>> make_tiles(const std::shared_ptr<sf::Tex
             if (tile_map[i][j] == models::TileMapObjectEnum::Lk)
                 tile->setTextureRect(sf::IntRect(143, 112, 16, 16));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lc)
+            if (tile_map[i][j] == models::TileMapObjectEnum::Coin)
                 tile->setTextureRect(sf::IntRect(143 - 16, 112, 16, 16));
 
             if (tile_map[i][j] == models::TileMapObjectEnum::Lt)

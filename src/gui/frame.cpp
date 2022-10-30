@@ -37,20 +37,20 @@ void Frame::run()
                 m_window->close();
         }
 
-        // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-        //     m_mario->dx = -0.1;
-        // }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            m_mario->dx = -0.1;
+        }
 
-        // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-        //     m_mario->dx = 0.1;
-        // }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            m_mario->dx = 0.1;
+        }
 
-        // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-        //     if (m_mario->onGround) {
-        //         m_mario->dy = -0.27;
-        //         m_mario->onGround = false;
-        //     }
-        // }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (m_mario->onGround) {
+                m_mario->dy = -0.27;
+                m_mario->onGround = false;
+            }
+        }
 
         m_mario->update(time);
 
