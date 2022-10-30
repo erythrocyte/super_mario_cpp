@@ -9,9 +9,9 @@ Frame::Frame(int width, int height, const std::string& caption)
     m_def_bg_color = std::make_shared<sf::Color>(107, 140, 255);
 }
 
-void Frame::set_plater(std::shared_ptr<lm::Player> player)
+void Frame::set_mario(std::shared_ptr<lm::Player> mario)
 {
-    m_player = player;
+    m_mario = mario;
 }
 
 void Frame::set_tiles(const std::vector<std::shared_ptr<sf::Sprite>>& tiles)

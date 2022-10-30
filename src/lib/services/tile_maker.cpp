@@ -1,6 +1,6 @@
 #include "tile_maker.hpp"
 
-#include "lib/models/TileMapObjects.hpp"
+#include "lib/models/tile_map_objects.hpp"
 
 namespace sm::src::lib::services::tile_maker {
 
@@ -8,8 +8,6 @@ std::vector<std::shared_ptr<sf::Sprite>> make_tiles(const std::shared_ptr<sf::Te
     const std::vector<std::string>& tile_map, float offsetX, float offsetY)
 {
     std::vector<std::shared_ptr<sf::Sprite>> result;
-    // sf::Texture tileSet;
-    // tileSet.loadFromFile(sprite_image_path);
 
     int ih = static_cast<int>(tile_map.size());
     int jw = static_cast<int>(tile_map[0].size());

@@ -19,12 +19,12 @@ public:
     Frame(int width, int height, const std::string& caption);
 
     void run();
-    void set_plater(std::shared_ptr<lm::Player> player);
+    void set_mario(std::shared_ptr<lm::Player> mario);
     void set_tiles(const std::vector<std::shared_ptr<sf::Sprite>>& tiles);
 
 private:
     std::shared_ptr<sf::RenderWindow> m_window;
-    std::shared_ptr<lm::Player> m_player;
+    std::shared_ptr<lm::Player> m_mario;
     std::vector<std::shared_ptr<sf::Sprite>> m_tiles;
     std::shared_ptr<sf::Clock> m_clock;
     std::shared_ptr<sf::Color> m_def_bg_color;
