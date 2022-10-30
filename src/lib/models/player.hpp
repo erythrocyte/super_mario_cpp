@@ -21,7 +21,10 @@ public:
     void update(float time);
     void collision(int num);
 
-    void set_map(const std::vector<std::string>& map, float offset_x = 0, float offset_y = 0);
+    void set_map(const std::vector<std::string>& map);
+
+    void set_offsetx(float value);
+    void set_offsety(float value);
 
 private:
     std::vector<std::string> m_map;

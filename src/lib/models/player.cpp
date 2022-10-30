@@ -68,11 +68,19 @@ void Player::collision(int num)
         }
 }
 
-void Player::set_map(const std::vector<std::string>& map, float offset_x, float offset_y)
+void Player::set_map(const std::vector<std::string>& map)
 {
     m_map = map;
-    m_offset_x = offset_x;
-    m_offset_y = offset_y;
+}
+
+void Player::set_offsetx(float value)
+{
+    m_offset_x = value;
+}
+
+void Player::set_offsety(float value)
+{
+    m_offset_y = value;
 }
 
 } // namespace sm::src::lib::modesl

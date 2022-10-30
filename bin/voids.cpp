@@ -1,13 +1,11 @@
 #include "voids.hpp"
 
-
 #include "gui/frame.hpp"
 #include "lib/services/map_maker.hpp"
 #include "lib/services/tile_maker.hpp"
 
 namespace g = sm::src::gui;
 namespace sls = sm::src::lib::services;
-
 
 namespace sm::bin {
 void run()
@@ -32,7 +30,9 @@ std::shared_ptr<slm::Player> make_player(const std::shared_ptr<sf::Texture> text
     const std::vector<std::string>& map, float offset_x, float offset_y)
 {
     auto result = std::make_shared<slm::Player>(texture);
-    result->set_map(map, offset_x, offset_y);
+    result->set_map(map);
+    result->set_offsetx(offset_x);
+    result->set_offsety(offset_y);
 
     return result;
 }

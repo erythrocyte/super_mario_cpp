@@ -4,8 +4,9 @@ add_definitions(-DBOOST_LOG_DYN_LINK)
 
 set(HEADERS
     lib/logging/logger.hpp
-    
-    lib/models/player.hpp    
+
+    lib/models/player.hpp
+    lib/models/tile.hpp
 
     lib/services/tile_maker.hpp
     lib/services/map_maker.hpp
@@ -17,6 +18,7 @@ set(SOURCES
     lib/logging/logger.cpp
 
     lib/models/player.cpp
+    lib/models/tile.cpp
 
     lib/services/tile_maker.cpp
     lib/services/map_maker.cpp
