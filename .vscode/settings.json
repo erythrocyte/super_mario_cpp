@@ -53,6 +53,12 @@
         "*.ipp": "cpp",
         "cstdarg": "cpp",
         "iomanip": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp"
     }
 }

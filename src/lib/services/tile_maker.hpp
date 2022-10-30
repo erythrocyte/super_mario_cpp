@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 
 namespace sm::src::lib::services::time_maker {
-std::vector<sf::Sprite> make_tile(const std::string& sprite_image_path,
+std::vector<std::shared_ptr<sf::Sprite>> make_tile(const std::string& sprite_image_path,
     const std::vector<std::string>& tile_map , float offsetX=0, float offsetY=0);
 
 } // namespace sm::src::lib::services::time_maker

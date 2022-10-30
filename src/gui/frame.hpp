@@ -9,6 +9,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "lib/models/player.hpp"
+
+namespace lm = sm::src::lib::models;
 
 namespace sm::src::gui {
 class Frame {
@@ -16,12 +19,14 @@ public:
     Frame(int width, int height, const std::string& caption);
 
     void run();
-    void add_drawable(std::shared_ptr<sf::Drawable> shape,
-        std::shared_ptr<sf::RenderStates> state = std::make_shared<sf::RenderStates>(sf::RenderStates::Default));
+    void set_plater(std::shared_ptr<lm::Player> player);
+    void set_tiles(const std::vector<std::shared_ptr<sf::Sprite>>& tiles);
 
 private:
     std::shared_ptr<sf::RenderWindow> m_window;
-    std::vector<std::tuple<std::shared_ptr<sf::RenderStates>, std::shared_ptr<sf::Drawable>>> m_shapes;
+    std::shared_ptr<lm::Player> m_player;
+    std::vector<std::shared_ptr<sf::Sprite>> m_tiles;
+    std::shared_ptr<sf::Clock> m_clock;
 };
 }
 

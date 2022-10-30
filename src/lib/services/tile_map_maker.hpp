@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace sm::src::lib::service::tile_map_maker {
+namespace sm::src::lib::services::tile_map_maker {
 
 std::vector<std::string> generate_random(int row_count, int col_count, int m_roof_count = 1, int m_flour_count = 3);
 std::vector<std::string> generate_sample();
