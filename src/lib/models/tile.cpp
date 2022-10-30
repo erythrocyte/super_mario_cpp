@@ -4,7 +4,7 @@ namespace sm::src::lib::models {
 
 void Tile::update_position()
 {
-    setPosition(m_i * 16 - m_offset_x, m_j * 16 - m_offset_y);
+    setPosition(m_j * 16 - m_offset_x, m_i * 16 - m_offset_y);
 }
 
 void Tile::set_i(int value)
