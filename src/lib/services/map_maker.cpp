@@ -1,6 +1,6 @@
-#include "tile_map_maker.hpp"
+#include "map_maker.hpp"
 
-namespace sm::src::lib::services::tile_map_maker {
+namespace sm::src::lib::services::map_maker {
 
 std::string generate_roof(int col_count)
 {

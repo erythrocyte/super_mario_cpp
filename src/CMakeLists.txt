@@ -8,7 +8,7 @@ set(HEADERS
     lib/models/player.hpp    
 
     lib/services/tile_maker.hpp
-    lib/services/tile_map_maker.hpp
+    lib/services/map_maker.hpp
 
     gui/frame.hpp
 )
@@ -19,7 +19,7 @@ set(SOURCES
     lib/models/player.cpp
 
     lib/services/tile_maker.cpp
-    lib/services/tile_map_maker.cpp
+    lib/services/map_maker.cpp
 
     gui/frame.cpp
 )
