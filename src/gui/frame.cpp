@@ -6,6 +6,7 @@ Frame::Frame(int width, int height, const std::string& caption)
 {
     m_window = std::make_shared<sf::RenderWindow>(sf::VideoMode(width, height), caption);
     m_clock = std::make_shared<sf::Clock>();
+    m_def_bg_color = std::make_shared<sf::Color>(107, 140, 255);
 }
 
 void Frame::set_plater(std::shared_ptr<lm::Player> player)
@@ -20,13 +21,6 @@ void Frame::set_tiles(const std::vector<std::shared_ptr<sf::Sprite>>& tiles)
 
 void Frame::run()
 {
-    // sf::Texture tileSet;
-    // tileSet.loadFromFile("/home/erythrocyte/Documents/progs/cpp/super_mario_cpp/assets/Mario_tileset.png");
-
-    // sf::Sprite tile(tileSet);
-    // tile.setTextureRect(sf::IntRect(143 - 16 * 3, 112, 16, 16));
-    // tile.setPosition(16, 16);
-
     float time = m_clock->getElapsedTime().asMicroseconds();
     m_clock->restart();
 
@@ -41,10 +35,11 @@ void Frame::run()
             if (event.type == sf::Event::Closed)
                 m_window->close();
         }
-        
-        m_window->clear(sf::Color(107, 140, 255));
-        // m_window->draw(tile);
+
+        m_window->clear(*m_def_bg_color);
         for (auto const& tile : m_tiles) {
+            if (tile == nullptr)
+                continue;
             m_window->draw(*tile);
         }
         m_window->display();

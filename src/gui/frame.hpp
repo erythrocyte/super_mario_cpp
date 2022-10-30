@@ -27,6 +27,7 @@ private:
     std::shared_ptr<lm::Player> m_player;
     std::vector<std::shared_ptr<sf::Sprite>> m_tiles;
     std::shared_ptr<sf::Clock> m_clock;
+    std::shared_ptr<sf::Color> m_def_bg_color;
 };
 }
 
