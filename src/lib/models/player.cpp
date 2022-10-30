@@ -6,7 +6,7 @@ namespace sm::src::lib::models {
 
 Player::Player(const std::shared_ptr<sf::Texture> image)
 {
-    sprite->setTexture(*image);
+    sprite = std::make_shared<sf::Sprite>(*image);
     rect = std::make_shared<sf::FloatRect>(100, 180, 16, 16);
 
     dx = dy = 0.1;
