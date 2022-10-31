@@ -38,16 +38,16 @@ void Frame::run()
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            m_mario->dx = -0.1; // set velocity x
+            m_mario->vx = -0.1; // set velocity x
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            m_mario->dx = 0.1; // set velocity x
+            m_mario->vx = 0.1; // set velocity x
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             if (m_mario->onGround) { // jump only if we on ground;
-                m_mario->dy = -0.27;
+                m_mario->vy = -0.27;
                 m_mario->onGround = false;
             }
         }

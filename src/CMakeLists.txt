@@ -7,6 +7,7 @@ set(HEADERS
 
     lib/models/player.hpp
     lib/models/tile.hpp
+    lib/models/enemy.hpp
 
     lib/services/tile_maker.hpp
     lib/services/map_maker.hpp
