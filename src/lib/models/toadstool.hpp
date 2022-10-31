@@ -16,6 +16,8 @@ public:
     ToadStool(std::shared_ptr<sf::Texture> image, int x, int y);
 
     void update(float time) override;
+
+protected:
     void collision() override;
 };
 

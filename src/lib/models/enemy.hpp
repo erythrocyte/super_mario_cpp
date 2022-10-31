@@ -25,12 +25,13 @@ public:
     void set_offsety(float value);
 
     virtual void update(float time) = 0;
-    virtual void collision() = 0;
 
 protected:
     std::vector<std::string> m_map;
     float m_offset_x;
     float m_offset_y;
+
+    virtual void collision() = 0;
 };
 
 }
