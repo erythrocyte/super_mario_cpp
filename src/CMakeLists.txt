@@ -8,6 +8,7 @@ set(HEADERS
     lib/models/player.hpp
     lib/models/tile.hpp
     lib/models/enemy.hpp
+    lib/models/toadstool.hpp
 
     lib/services/tile_maker.hpp
     lib/services/map_maker.hpp
@@ -21,6 +22,7 @@ set(SOURCES
     lib/models/player.cpp
     lib/models/tile.cpp
     lib/models/enemy.cpp
+    lib/models/toadstool.cpp
 
     lib/services/tile_maker.cpp
     lib/services/map_maker.cpp
