@@ -7,8 +7,12 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "lib/models/tile.hpp"
+
+namespace slm = sm::src::lib::models;
+
 namespace sm::src::lib::services::tile_maker {
-std::vector<std::shared_ptr<sf::Sprite>> make_tiles(const std::shared_ptr<sf::Texture> texture,
+std::vector<std::shared_ptr<slm::Tile>> make_tiles(const std::shared_ptr<sf::Texture> texture,
     const std::vector<std::string>& tile_map, float offsetX = 0, float offsetY = 0);
 
 } // namespace sm::src::lib::services::time_maker

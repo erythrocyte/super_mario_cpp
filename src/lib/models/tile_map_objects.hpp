@@ -5,7 +5,7 @@ namespace sm::src::lib::models {
 enum TileMapObjectEnum : char {
     Bp = 'P',
     Lk = 'k',
-    Lc = 'c',
+    Coin = 'c',
     Lt = 't',
     Lg = 'g',
     Bg = 'G',
