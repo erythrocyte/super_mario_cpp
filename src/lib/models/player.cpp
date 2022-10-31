@@ -9,18 +9,18 @@ Player::Player(const std::shared_ptr<sf::Texture> image)
     sprite = std::make_shared<sf::Sprite>(*image);
     rect = std::make_shared<sf::FloatRect>(100, 180, 16, 16);
 
-    dx = dy = 0.1;
+    vx = vy = 0.1;
     currentFrame = 0;
 }
 
 void Player::update(float time)
 {
-    rect->left += dx * time;
+    rect->left += vx * time;
     collision(0);
 
     if (!onGround)
-        dy = dy + 0.0005 * time; // gravitation;
-    rect->top += dy * time;
+        vy = vy + 0.0005 * time; // gravitation;
+    rect->top += vy * time;
     onGround = false;
     collision(1);
 
@@ -28,14 +28,14 @@ void Player::update(float time)
     if (currentFrame > 3)
         currentFrame -= 3;
 
-    if (dx > 0)
+    if (vx > 0)
         sprite->setTextureRect(sf::IntRect(112 + 31 * int(currentFrame), 144, 16, 16));
-    if (dx < 0)
+    if (vx < 0)
         sprite->setTextureRect(sf::IntRect(112 + 31 * int(currentFrame) + 16, 144, -16, 16));
 
     sprite->setPosition(rect->left - m_offset_x, rect->top - m_offset_y);
 
-    dx = 0;
+    vx = 0;
 }
 
 void Player::collision(int num)
@@ -47,19 +47,19 @@ void Player::collision(int num)
                 || (m_map[i][j] == TileMapObjectEnum::Zero)
                 || (m_map[i][j] == TileMapObjectEnum::Lr)
                 || (m_map[i][j] == TileMapObjectEnum::Lt)) {
-                if (dy > 0 && num == 1) {
+                if (vy > 0 && num == 1) {
                     rect->top = i * 16 - rect->height;
-                    dy = 0;
+                    vy = 0;
                     onGround = true;
                 }
-                if (dy < 0 && num == 1) {
+                if (vy < 0 && num == 1) {
                     rect->top = i * 16 + 16;
-                    dy = 0;
+                    vy = 0;
                 }
-                if (dx > 0 && num == 0) {
+                if (vx > 0 && num == 0) {
                     rect->left = j * 16 - rect->width;
                 }
-                if (dx < 0 && num == 0) {
+                if (vx < 0 && num == 0) {
                     rect->left = j * 16 + 16;
                 }
             }
