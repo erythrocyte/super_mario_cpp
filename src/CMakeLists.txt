@@ -20,6 +20,7 @@ set(SOURCES
 
     lib/models/player.cpp
     lib/models/tile.cpp
+    lib/models/enemy.cpp
 
     lib/services/tile_maker.cpp
     lib/services/map_maker.cpp

@@ -70,9 +70,9 @@ void Player::collision(int num)
         }
 }
 
-void Player::set_map(const std::vector<std::string>& map)
+void Player::set_map(const std::vector<std::string>& value)
 {
-    m_map = map;
+    m_map = value;
 }
 
 void Player::set_offsetx(float value)
