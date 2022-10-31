@@ -11,12 +11,12 @@
 namespace sm::src::lib::models {
 
 class ToadStool : public Enemy {
-
 public:
+    using Enemy::Enemy;
     ToadStool(std::shared_ptr<sf::Texture> image, int x, int y);
 
-    virtual void update(float time);
-    virtual void collision();
+    void update(float time) override;
+    void collision() override;
 };
 
 }

@@ -25,9 +25,6 @@ void ToadStool::update(float time)
 
     sprite->setPosition(rect->left - m_offset_x, rect->top - m_offset_y);
 }
-// {
-
-// }
 
 void ToadStool::collision()
 {

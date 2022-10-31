@@ -4,7 +4,7 @@ namespace sm::src::lib::models {
 
 Enemy::Enemy(std::shared_ptr<sf::Texture> image, int x, int y)
 {
-    sprite = std::make_shared<sf::Sprite>(image);
+    sprite = std::make_shared<sf::Sprite>(*image);
     rect = std::make_shared<sf::FloatRect>(x, y, 16, 16);
 
     vx = 0.05;

@@ -11,15 +11,7 @@ namespace sm::src::lib::models {
 class Enemy {
 
 public:
-    Enemy(std::shared_ptr<sf::Texture> image, int x, int y)
-    {
-        sprite = std::make_shared<sf::Sprite>(image);
-        rect = std::make_shared<sf::FloatRect>(x, y, 16, 16);
-
-        vx = 0.05;
-        currentFrame = 0;
-        alife = true;
-    }
+    Enemy(std::shared_ptr<sf::Texture> image, int x, int y);
 
     float vx;
     float vy;
@@ -32,9 +24,8 @@ public:
     void set_offsetx(float value);
     void set_offsety(float value);
 
-    virtual void update(float time);
-
-    virtual void collision();
+    virtual void update(float time) = 0;
+    virtual void collision() = 0;
 
 protected:
     std::vector<std::string> m_map;
