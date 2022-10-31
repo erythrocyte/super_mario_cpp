@@ -23,7 +23,7 @@ void run()
     auto mario = make_player(tile_set, map, offset_x, offset_y);
     frame->set_mario(mario);
 
-    frame->add_enemy(make_toadstool(tile_set, map, offset_x, offset_y));
+    frame->add_enemy(make_toadstool(tile_set, 43, 16, map, offset_x, offset_y));
 
     frame->run();
 }
@@ -40,9 +40,9 @@ std::shared_ptr<slm::Player> make_player(const std::shared_ptr<sf::Texture> text
 }
 
 std::shared_ptr<slm::ToadStool> make_toadstool(const std::shared_ptr<sf::Texture> texture,
-    const std::vector<std::string>& map, float offset_x, float offset_y)
+    int x, int y, const std::vector<std::string>& map, float offset_x, float offset_y)
 {
-    auto result = std::make_shared<slm::ToadStool>(texture, 48 * 16, 13 * 16);
+    auto result = std::make_shared<slm::ToadStool>(texture, x * 16, y * 16);
     result->set_map(map);
     result->set_offsetx(offset_x);
     result->set_offsety(offset_y);

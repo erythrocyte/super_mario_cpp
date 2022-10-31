@@ -8,8 +8,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "lib/models/toadstool.hpp"
 #include "lib/models/player.hpp"
+#include "lib/models/toadstool.hpp"
 
 namespace slm = sm::src::lib::models;
 
@@ -20,7 +20,7 @@ std::shared_ptr<slm::Player> make_player(const std::shared_ptr<sf::Texture> text
     const std::vector<std::string>& map, float offset_x, float offset_y);
 
 std::shared_ptr<slm::ToadStool> make_toadstool(const std::shared_ptr<sf::Texture> texture,
-    const std::vector<std::string>& map, float offset_x, float offset_y);
+    int x, int y, const std::vector<std::string>& map, float offset_x, float offset_y);
 }
 
 #endif

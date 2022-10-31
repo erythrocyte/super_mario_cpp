@@ -81,13 +81,13 @@ void Frame::update_enemies_time()
 
 void Frame::update_time()
 {
-    float time = m_clock->getElapsedTime().asMicroseconds();
+    m_time = m_clock->getElapsedTime().asMicroseconds();
     m_clock->restart();
 
-    time = time / 500; // здесь регулируем скорость игры
+    m_time = m_time / 500; // здесь регулируем скорость игры
 
-    if (time > 20) // this time only for smooth move of mario;
-        time = 20;
+    if (m_time > 20) // this time only for smooth move of mario;
+        m_time = 20;
 }
 
 void Frame::check_enemies_intersect()
