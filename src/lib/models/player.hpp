@@ -11,8 +11,8 @@ class Player {
 public:
     Player(const std::shared_ptr<sf::Texture> image);
 
-    float dx;
-    float dy;
+    float dx; // velocity x
+    float dy; // velocity y;
     std::shared_ptr<sf::FloatRect> rect;
     bool onGround;
     std::shared_ptr<sf::Sprite> sprite;

@@ -28,7 +28,7 @@ void Frame::run()
 
         time = time / 500; // здесь регулируем скорость игры
 
-        if (time > 20)
+        if (time > 20) // this time only for smooth move of mario;
             time = 20;
 
         sf::Event event;
@@ -38,15 +38,15 @@ void Frame::run()
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            m_mario->dx = -0.1;
+            m_mario->dx = -0.1; // set velocity x
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            m_mario->dx = 0.1;
+            m_mario->dx = 0.1; // set velocity x
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            if (m_mario->onGround) {
+            if (m_mario->onGround) { // jump only if we on ground;
                 m_mario->dy = -0.27;
                 m_mario->onGround = false;
             }

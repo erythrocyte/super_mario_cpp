@@ -19,7 +19,7 @@ void Player::update(float time)
     collision(0);
 
     if (!onGround)
-        dy = dy + 0.0005 * time;
+        dy = dy + 0.0005 * time; // gravitation;
     rect->top += dy * time;
     onGround = false;
     collision(1);
@@ -34,6 +34,8 @@ void Player::update(float time)
         sprite->setTextureRect(sf::IntRect(112 + 31 * int(currentFrame) + 16, 144, -16, 16));
 
     sprite->setPosition(rect->left - m_offset_x, rect->top - m_offset_y);
+
+    dx = 0;
 }
 
 void Player::collision(int num)
