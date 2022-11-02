@@ -3,15 +3,15 @@
 
 namespace sm::src::lib::models {
 enum TileMapObjectEnum : char {
-    Bp = 'P',
-    Lk = 'k',
+    BrownStone = 'P',
+    BrownBrick = 'k',
     Coin = 'c',
-    Lt = 't',
-    Lg = 'g',
-    Bg = 'G',
-    Ld = 'd',
-    Lw = 'w',
-    Lr = 'r',
+    Tube = 't',
+    LittleTree = 'g',
+    BigTree = 'G',
+    Bushes = 'd',
+    Cloud = 'w',
+    BrownConcrete = 'r',
     Zero = '0',
     Empty = ' '
 };

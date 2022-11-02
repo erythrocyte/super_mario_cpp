@@ -19,31 +19,31 @@ std::vector<std::shared_ptr<slm::Tile>> make_tiles(const std::shared_ptr<sf::Tex
             tile->set_offset_x(offsetX);
             tile->set_offset_y(offsetY);
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Bp)
+            if (tile_map[i][j] == models::TileMapObjectEnum::BrownStone)
                 tile->setTextureRect(sf::IntRect(143 - 16 * 3, 112, 16, 16));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lk)
+            if (tile_map[i][j] == models::TileMapObjectEnum::BrownBrick)
                 tile->setTextureRect(sf::IntRect(143, 112, 16, 16));
 
             if (tile_map[i][j] == models::TileMapObjectEnum::Coin)
                 tile->setTextureRect(sf::IntRect(143 - 16, 112, 16, 16));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lt)
+            if (tile_map[i][j] == models::TileMapObjectEnum::Tube)
                 tile->setTextureRect(sf::IntRect(0, 47, 32, 95 - 47));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lg)
+            if (tile_map[i][j] == models::TileMapObjectEnum::LittleTree)
                 tile->setTextureRect(sf::IntRect(0, 16 * 9 - 5, 3 * 16, 16 * 2 + 5));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Bg)
+            if (tile_map[i][j] == models::TileMapObjectEnum::BigTree)
                 tile->setTextureRect(sf::IntRect(145, 222, 222 - 145, 255 - 222));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Ld)
+            if (tile_map[i][j] == models::TileMapObjectEnum::Bushes)
                 tile->setTextureRect(sf::IntRect(0, 106, 74, 127 - 106));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lw)
+            if (tile_map[i][j] == models::TileMapObjectEnum::Cloud)
                 tile->setTextureRect(sf::IntRect(99, 224, 140 - 99, 255 - 224));
 
-            if (tile_map[i][j] == models::TileMapObjectEnum::Lr)
+            if (tile_map[i][j] == models::TileMapObjectEnum::BrownConcrete)
                 tile->setTextureRect(sf::IntRect(143 - 32, 112, 16, 16));
 
             if ((tile_map[i][j] == models::TileMapObjectEnum::Empty) || (tile_map[i][j] == models::TileMapObjectEnum::Zero))

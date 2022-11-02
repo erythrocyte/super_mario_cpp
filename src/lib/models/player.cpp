@@ -16,13 +16,13 @@ Player::Player(const std::shared_ptr<sf::Texture> image)
 void Player::update(float time)
 {
     rect->left += vx * time;
-    collision(0);
+    collision(false);
 
     if (!onGround)
         vy = vy + 0.0005 * time; // gravitation;
     rect->top += vy * time;
     onGround = false;
-    collision(1);
+    collision(true);
 
     currentFrame += time * 0.005;
     if (currentFrame > 3)
@@ -38,28 +38,28 @@ void Player::update(float time)
     vx = 0;
 }
 
-void Player::collision(int num)
+void Player::collision(bool is_y)
 {
     for (int i = rect->top / 16; i < (rect->top + rect->height) / 16; i++)
         for (int j = rect->left / 16; j < (rect->left + rect->width) / 16; j++) {
-            if ((m_map[i][j] == TileMapObjectEnum::Bp)
-                || (m_map[i][j] == TileMapObjectEnum::Lk)
+            if ((m_map[i][j] == TileMapObjectEnum::BrownStone)
+                || (m_map[i][j] == TileMapObjectEnum::BrownBrick)
                 || (m_map[i][j] == TileMapObjectEnum::Zero)
-                || (m_map[i][j] == TileMapObjectEnum::Lr)
-                || (m_map[i][j] == TileMapObjectEnum::Lt)) {
-                if (vy > 0 && num == 1) {
+                || (m_map[i][j] == TileMapObjectEnum::BrownConcrete)
+                || (m_map[i][j] == TileMapObjectEnum::Tube)) {
+                if (vy > 0 && is_y) {
                     rect->top = i * 16 - rect->height;
                     vy = 0;
                     onGround = true;
                 }
-                if (vy < 0 && num == 1) {
+                if (vy < 0 && is_y) {
                     rect->top = i * 16 + 16;
                     vy = 0;
                 }
-                if (vx > 0 && num == 0) {
+                if (vx > 0 && !is_y) {
                     rect->left = j * 16 - rect->width;
                 }
-                if (vx < 0 && num == 0) {
+                if (vx < 0 && !is_y) {
                     rect->left = j * 16 + 16;
                 }
             }

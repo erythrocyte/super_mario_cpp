@@ -19,7 +19,7 @@ public:
     float currentFrame;
 
     void update(float time);
-    void collision(int num);
+    void collision(bool is_y);
 
     void set_map(const std::vector<std::string>& value);
 

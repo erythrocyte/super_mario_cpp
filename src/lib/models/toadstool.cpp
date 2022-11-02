@@ -30,7 +30,7 @@ void ToadStool::collision()
 {
     for (int i = rect->top / 16; i < (rect->top + rect->height) / 16; i++) {
         for (int j = rect->left / 16; j < (rect->left + rect->width) / 16; j++) {
-            if ((m_map[i][j] == TileMapObjectEnum::Bp) || (m_map[i][j] == TileMapObjectEnum::Zero)) {
+            if ((m_map[i][j] == TileMapObjectEnum::BrownStone) || (m_map[i][j] == TileMapObjectEnum::Zero)) {
                 if (vx > 0) {
                     rect->left = j * 16 - rect->width;
                     vx *= -1;
