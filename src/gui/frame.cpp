@@ -23,13 +23,13 @@ void Frame::set_tiles(const std::vector<std::shared_ptr<slm::Tile>>& tiles)
 void Frame::run()
 {
     while (m_window->isOpen()) {
-        check_events();
-        if (!m_on_focus)
-            continue;
-
         update_time();
 
-        check_keyboard_press();
+        check_events();
+
+        if (m_on_focus) {
+            check_keyboard_press();
+        }
 
         update_object_time();
 
