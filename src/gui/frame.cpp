@@ -7,6 +7,7 @@ Frame::Frame(int width, int height, const std::string& caption)
     m_window = std::make_shared<sf::RenderWindow>(sf::VideoMode(width, height), caption);
     m_clock = std::make_shared<sf::Clock>();
     m_def_bg_color = std::make_shared<sf::Color>(107, 140, 255);
+    m_on_focus = true;
 }
 
 void Frame::set_mario(std::shared_ptr<slm::Player> mario)
@@ -22,9 +23,11 @@ void Frame::set_tiles(const std::vector<std::shared_ptr<slm::Tile>>& tiles)
 void Frame::run()
 {
     while (m_window->isOpen()) {
-        update_time();
-
         check_events();
+        if (!m_on_focus)
+            continue;
+
+        update_time();
 
         check_keyboard_press();
 
@@ -132,6 +135,12 @@ void Frame::check_events()
     while (m_window->pollEvent(event)) {
         if (event.type == sf::Event::Closed)
             m_window->close();
+        else if (event.type == sf::Event::GainedFocus) {
+            m_on_focus = true;
+
+        } else if (event.type == sf::Event::LostFocus) {
+            m_on_focus = false;
+        }
     }
 }
 

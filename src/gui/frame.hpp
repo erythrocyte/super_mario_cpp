@@ -33,6 +33,7 @@ private:
     std::shared_ptr<sf::Color> m_def_bg_color;
     std::vector<std::shared_ptr<slm::Enemy>> m_enemies;
     float m_time;
+    bool m_on_focus;
 
     void update_offset_x(float value);
     void draw_tiles();
