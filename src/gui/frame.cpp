@@ -113,6 +113,9 @@ void Frame::check_enemies_intersect()
 
 void Frame::check_keyboard_press()
 {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        m_window->close();
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         m_mario->vx = -0.1; // set velocity x
     }
@@ -133,13 +136,18 @@ void Frame::check_events()
 {
     sf::Event event;
     while (m_window->pollEvent(event)) {
-        if (event.type == sf::Event::Closed)
+        switch (event.type) {
+        case sf::Event::Closed:
             m_window->close();
-        else if (event.type == sf::Event::GainedFocus) {
+            break;
+        case sf::Event::GainedFocus:
             m_on_focus = true;
-
-        } else if (event.type == sf::Event::LostFocus) {
+            break;
+        case sf::Event::LostFocus:
             m_on_focus = false;
+            break;
+        default:
+            break;
         }
     }
 }
@@ -165,5 +173,4 @@ void Frame::update_window()
     m_window->draw(*m_mario->sprite);
     m_window->display();
 }
-
 }
