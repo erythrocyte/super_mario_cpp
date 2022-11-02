@@ -23,8 +23,7 @@ void run()
     auto mario = make_player(tile_set, map, offset_x, offset_y);
     frame->set_mario(mario);
 
-    frame->add_enemy(make_toadstool(tile_set, 43, 16, map, offset_x, offset_y));
-
+    frame->add_enemy(make_toadstool(tile_set, 21, 13, map, offset_x, offset_y));
     frame->run();
 }
 
